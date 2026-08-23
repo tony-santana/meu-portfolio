@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio - [TONY EMERSON SANTANA DOS SANTOS]</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon (opcional) -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6l5.25 3.15L17 12.23l-4-2.37V7z'/></svg>">
+</head>
+<body>
+    <!-- ============================================ -->
+    <!-- BARRA DE NAVEGAÇÃO FIXA                       -->
+    <!-- ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <!-- Logo / Nome do portfólio -->
+            <div class="nav-logo">
+                <a href="#sobre">Meu Portfólio</a>
+            </div>
+
+            <!-- Botão do menu responsivo (hambúrguer) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Links de navegação -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <!-- Alternador de tema claro/escuro -->
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        🌙
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- CONTEÚDO PRINCIPAL                           -->
+    <!-- ============================================ -->
+    <main>
+        <!-- SEÇÃO: SOBRE MIM -->
+        <section id="sobre" class="section">
+            <div class="container">
+                <h1>Sobre mim</h1>
+                <div class="sobre-content">
+                    <!-- Foto/avatar (opcional) -->
+                    <div class="sobre-avatar">
+                        <div class="avatar-placeholder">
+                            <span>👤</span>
+                        </div>
+                    </div>
+                    <div class="sobre-texto">
+                        <h2>Olá, sou TONY EMERSON SANTANA DOS SANTOS!</h2>
+                        <p>
+                            Sou um desenvolvedor web apaixonado por tecnologia e design. 
+                            Tenho experiência com HTML, CSS, JavaScript e estou sempre 
+                            buscando aprender novas ferramentas e linguagens.
+                        </p>
+                        <p>
+                            <strong>Hobbies:</strong> Programação, leitura, mecânica de moto e marcenaria.
+                        </p>
+                        <p>
+                            Atualmente estou focado em desenvolvimento front-end e 
+                            criação de experiências digitais interativas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: FORMAÇÃO -->
+        <section id="formacao" class="section section-alt">
+            <div class="container">
+                <h1>Formação</h1>
+                <div class="formacao-grid">
+                    <!-- Item de formação 1 -->
+                    <div class="formacao-item">
+                        <h3>🎓 Análise e Desenvolvimento de Sistemas</h3>
+                        <p><strong>Instituição:</strong> UNINTER</p>
+                        <p><strong>Período:</strong> 2025 - previsão de término 2028</p>
+                        <p>Análise e Desenvolvimento de Sistemas.</p>
+                    </div>
+                    <!-- Item de formação 2 -->
+                    <div class="formacao-item">
+                        <h3>💻 Curso Técnico em Contabilidade</h3>
+                        <p><strong>Instituição:</strong> SENAC SANTOS-SP</p>
+                        <p><strong>Período:</strong> 2011 - 2013</p>
+                        <p>Análise Contábil, Folha de Pagamento e recolhimento de tributos sobre a Folha, Análise Fiscal, importação de notas fiscais, apuração de Tributos e Obrigações Acessórias.</p>
+                    </div>
+                    <!-- Idiomas -->
+                    <div class="formacao-item">
+                        <h3>🌍 Idiomas</h3>
+                        <ul>
+                            <li><strong>Português:</strong> Nativo</li>
+                            <li><strong>Inglês:</strong> Intermediário (B1) - Leitura técnica</li>
+                            <li><strong>Espanhol:</strong> Intermediário</li>
+                        </ul>
+                    </div>
+                    <!-- Cursos complementares -->
+                    <div class="formacao-item">
+                        <h3>📚 Cursos Complementares</h3>
+                        <ul>
+                            <li>Introdução a Ciência de Dado - ENAP (2025)</li>
+                            <li>Introdução à Lógica de programação - Futuro Digital -SENAI EAD (2025)</li>
+                            <li>Git e GitHub - FGV Curso Gratuitos EAD (2026)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: PORTFÓLIO -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h1>Portfólio</h1>
+                <p class="section-subtitle">Alguns dos meus trabalhos e projetos.</p>
+                <div class="portfolio-grid">
+                    <!-- Projeto 1 -->
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <span>🖥️</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Projeto 1 - Landing Page</h3>
+                            <p>Página de captura para um produto fictício, desenvolvida com HTML5 e CSS3.</p>
+                            <a href="#" target="_blank" class="btn-link">Ver projeto →</a>
+                        </div>
+                    </div>
+                    <!-- Projeto 2 -->
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <span>📱</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Projeto 2 - App de Tarefas</h3>
+                            <p>Aplicação web para gerenciamento de tarefas com JavaScript e localStorage.</p>
+                            <a href="#" target="_blank" class="btn-link">Ver projeto →</a>
+                        </div>
+                    </div>
+                    <!-- Projeto 3 -->
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <span>🎨</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Projeto 3 - Galeria de Fotos</h3>
+                            <p>Galeria interativa com filtros e layout responsivo, usando CSS Grid.</p>
+                            <a href="#" target="_blank" class="btn-link">Ver projeto →</a>
+                        </div>
+                    </div>
+                    <!-- Projeto 4 -->
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <span>📊</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Projeto 4 - Dashboard</h3>
+                            <p>Dashboard simples com gráficos utilizando Chart.js e dados mockados.</p>
+                            <a href="#" target="_blank" class="btn-link">Ver projeto →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CONTATO -->
+        <section id="contato" class="section section-alt">
+            <div class="container">
+                <h1>Contato</h1>
+                <p class="section-subtitle">Entre em contato comigo preenchendo o formulário abaixo.</p>
+                <div class="contato-wrapper">
+                    <!-- Formulário de contato -->
+                    <form id="contactForm" class="contato-form" novalidate>
+                        <div class="form-group">
+                            <label for="nome">Nome completo *</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                            <span class="error-message" id="nomeError">Por favor, preencha seu nome.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                            <span class="error-message" id="emailError">Por favor, insira um e-mail válido (ex: usuario@dominio.com).</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+                            <span class="error-message" id="mensagemError">Por favor, escreva sua mensagem.</span>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar mensagem</button>
+                    </form>
+                    <!-- Informações adicionais de contato -->
+                    <div class="contato-info">
+                        <h3>Outros canais</h3>
+                        <ul>
+                            <li>📧 <a href="mailto:seuemail@example.com">seuemail@example.com</a></li>
+                            <li>🔗 <a href="https://linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a></li>
+                            <li>🐙 <a href="https://github.com/seu-usuario" target="_blank">GitHub</a></li>
+                            <li>📱 +55 (79) 9XXXX-XXXX</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- RODAPÉ                                       -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Tony Emerson Santana dos Santos. Todos os direitos reservados.</p>
+            <p>Desenvolvido com ❤️ para a Atividade Prática de Fundamentos da Programação Web.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT                                   -->
+    <!-- ============================================ -->
+    <script src="js/script.js"></script>
+</body>
+</html>
