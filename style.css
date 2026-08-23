@@ -1,179 +1,500 @@
-/* RESET BÁSICO */
+/* ==============================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ============================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ESTILOS GERAIS */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    padding: 20px;
-    background-color: #ffffff;
-    color: #333333;
+    color: #333;
+    background: #f8f9fa;
+    padding-top: 70px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* TEMA ESCURO */
-body.dark {
-    background-color: #1a1a2e;
-    color: #eeeeee;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* MENU DE NAVEGAÇÃO */
-nav {
+/* ==============================================
+   TEMA ESCURO - CORRIGIDO!
+   ============================================== */
+body.dark-mode {
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background: #16213e;
+}
+
+body.dark-mode .nav-logo a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-menu li a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-menu li a:hover {
+    background: #0f3460;
+    color: #fff;
+}
+
+body.dark-mode .section-alt {
+    background: #16213e;
+}
+
+body.dark-mode .formacao-item,
+body.dark-mode .portfolio-card,
+body.dark-mode .contato-form,
+body.dark-mode .contato-info {
+    background: #1a1a2e;
+    border-color: #0f3460;
+}
+
+body.dark-mode .footer {
+    background: #16213e;
+}
+
+body.dark-mode .section h1 {
+    color: #e0e0e0;
+    border-bottom-color: #0f3460;
+}
+
+body.dark-mode .sobre-texto h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .formacao-item h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .card-content h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .card-content p {
+    color: #aaa;
+}
+
+body.dark-mode .contato-info h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #2a2a4a;
+    border-color: #3a3a5a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-toggle span {
+    background: #e0e0e0;
+}
+
+/* ==============================================
+   BARRA DE NAVEGAÇÃO
+   ============================================== */
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: #2c3e50;
-    padding: 15px 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
     align-items: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: white;
+.nav-menu li a {
+    color: #333;
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #34495e;
+.nav-menu li a:hover {
+    background: #3498db;
+    color: #fff;
 }
 
-/* BOTÃO TEMA */
-#temaBtn {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    background: none;
-    color: white;
-    z-index: 1001;
-}
-
-/* SEÇÕES */
-section {
-    max-width: 900px;
-    margin: 80px auto 40px;
-    padding: 40px 20px;
-    min-height: 100vh;
-    border-bottom: 2px solid #ddd;
-    scroll-margin-top: 70px;
-}
-
-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* FORMULÁRIO */
-form {
-    display: flex;
+.nav-toggle {
+    display: none;
     flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-form input,
-form textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-form button {
-    padding: 12px;
-    background-color: #2c3e50;
-    color: white;
+    background: none;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #34495e;
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    border-radius: 2px;
 }
 
-/* MENSAGEM DE CONFIRMAÇÃO */
-#mensagemConfirmacao {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 8px 12px;
 }
 
-/* PROJETOS DO PORTFÓLIO */
-.projeto {
-    background-color: #f4f4f4;
+/* ==============================================
+   SEÇÕES
+   ============================================== */
+.section {
+    padding: 60px 0;
+    min-height: 80vh;
+}
+
+.section-alt {
+    background: #f0f2f5;
+}
+
+.section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* ==============================================
+   SOBRE MIM
+   ============================================== */
+.sobre-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.avatar-placeholder {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.sobre-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* ==============================================
+   FORMAÇÃO
+   ============================================== */
+.formacao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.formacao-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 4px solid #3498db;
+}
+
+.formacao-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.formacao-item ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ==============================================
+   PORTFÓLIO
+   ============================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.portfolio-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card-image {
+    height: 150px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.card-content {
     padding: 20px;
-    margin: 15px 0;
-    border-radius: 5px;
-    transition: transform 0.3s;
 }
 
-.projeto:hover {
-    transform: scale(1.02);
+.btn-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-body.dark .projeto {
-    background-color: #2a2a4a;
+/* ==============================================
+   CONTATO
+   ============================================== */
+.contato-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-.projeto a {
+.contato-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    display: none;
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.btn-submit {
+    background: #3498db;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: #2980b9;
+}
+
+.contato-info {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contato-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contato-info ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contato-info ul li a {
     color: #3498db;
     text-decoration: none;
 }
 
-.projeto a:hover {
-    text-decoration: underline;
+/* ==============================================
+   RODAPÉ
+   ============================================== */
+.footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
 }
 
-/* RESPONSIVO */
+/* ==============================================
+   RESPONSIVIDADE
+   ============================================== */
 @media (max-width: 768px) {
-    nav ul {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        gap: 0;
     }
 
-    #temaBtn {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
-        background-color: #2c3e50;
-        padding: 10px 15px;
-        border-radius: 50%;
+    body.dark-mode .nav-menu {
+        background: #16213e;
     }
 
-    section {
-        padding: 20px 15px;
-        margin: 120px auto 20px;
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    body.dark-mode .nav-menu li {
+        border-bottom-color: #2a2a4a;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar-placeholder {
+        width: 150px;
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    .contato-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .section h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo a {
+        font-size: 1.2rem;
+    }
+
+    .section h1 {
+        font-size: 1.5rem;
+    }
+
+    .formacao-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
     }
 }
