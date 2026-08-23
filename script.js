@@ -4,7 +4,6 @@
  * ==============================================
  */
 
-// Aguarda o carregamento da página
 document.addEventListener('DOMContentLoaded', function() {
 
     console.log('✅ JavaScript carregado!');
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('navMenu');
 
     if (navToggle && navMenu) {
-        console.log('✅ Menu encontrado!');
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
         });
@@ -30,51 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==============================================
-    // TEMA CLARO/ESCURO - CORRIGIDO!
+    // TEMA CLARO/ESCURO - VERSÃO SIMPLIFICADA
     // ==============================================
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
 
-    console.log('🔍 Botão tema:', themeToggle);
-
-    if (themeToggle) {
-        console.log('✅ Botão tema encontrado!');
-
-        // Verifica tema salvo
-        const savedTheme = localStorage.getItem('theme');
-        console.log('📁 Tema salvo:', savedTheme);
-        
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeToggle.textContent = '☀️';
-            console.log('🌙 Tema escuro aplicado!');
-        }
-
-        // EVENTO DE CLIQUE - AQUI ESTÁ A CORREÇÃO!
-        themeToggle.addEventListener('click', function() {
-            console.log('🖱️ Clicou no botão tema!');
-            
-            // Alterna a classe
-            body.classList.toggle('dark-mode');
-            
-            // Verifica se a classe foi adicionada
-            const isDark = body.classList.contains('dark-mode');
-            console.log('🌓 Modo escuro:', isDark);
-            
-            // Atualiza o ícone
-            if (isDark) {
-                themeToggle.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-                console.log('🌙 Ativou tema escuro');
-            } else {
-                themeToggle.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-                console.log('☀️ Ativou tema claro');
-            }
-        });
-    } else {
-        console.log('❌ Botão tema NÃO encontrado! Verifique o ID "themeToggle"');
+    // Adiciona a classe dark-mode se estiver salvo
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
     }
+
+    // Quando clicar no botão
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggle.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        }
+    });
 
     // ==============================================
     // VALIDAÇÃO DO FORMULÁRIO
