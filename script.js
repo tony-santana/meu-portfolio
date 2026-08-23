@@ -4,7 +4,10 @@
  * ==============================================
  */
 
+// Aguarda o carregamento da página
 document.addEventListener('DOMContentLoaded', function() {
+
+    console.log('✅ JavaScript carregado!');
 
     // ==============================================
     // MENU RESPONSIVO
@@ -13,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('navMenu');
 
     if (navToggle && navMenu) {
+        console.log('✅ Menu encontrado!');
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
         });
@@ -31,28 +35,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
 
-    // Verifica tema salvo no localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggle.textContent = '☀️';
-    }
+    console.log('🔍 Botão tema:', themeToggle);
 
-    // Evento de clique para alternar o tema
     if (themeToggle) {
+        console.log('✅ Botão tema encontrado!');
+
+        // Verifica tema salvo
+        const savedTheme = localStorage.getItem('theme');
+        console.log('📁 Tema salvo:', savedTheme);
+        
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+            console.log('🌙 Tema escuro aplicado!');
+        }
+
+        // EVENTO DE CLIQUE - AQUI ESTÁ A CORREÇÃO!
         themeToggle.addEventListener('click', function() {
-            // Alterna a classe dark-mode no body
+            console.log('🖱️ Clicou no botão tema!');
+            
+            // Alterna a classe
             body.classList.toggle('dark-mode');
             
-            // Atualiza o ícone e salva a preferência
-            if (body.classList.contains('dark-mode')) {
+            // Verifica se a classe foi adicionada
+            const isDark = body.classList.contains('dark-mode');
+            console.log('🌓 Modo escuro:', isDark);
+            
+            // Atualiza o ícone
+            if (isDark) {
                 themeToggle.textContent = '☀️';
                 localStorage.setItem('theme', 'dark');
+                console.log('🌙 Ativou tema escuro');
             } else {
                 themeToggle.textContent = '🌙';
                 localStorage.setItem('theme', 'light');
+                console.log('☀️ Ativou tema claro');
             }
         });
+    } else {
+        console.log('❌ Botão tema NÃO encontrado! Verifique o ID "themeToggle"');
     }
 
     // ==============================================
@@ -72,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const emailError = document.getElementById('emailError');
             const mensagemError = document.getElementById('mensagemError');
 
-            // Reseta erros
             nomeError.classList.remove('show');
             emailError.classList.remove('show');
             mensagemError.classList.remove('show');
@@ -82,14 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let isValid = true;
 
-            // Valida nome
             if (nome.value.trim() === '') {
                 nomeError.classList.add('show');
                 nome.classList.add('error');
                 isValid = false;
             }
 
-            // Valida email
             if (email.value.trim() === '') {
                 emailError.classList.add('show');
                 email.classList.add('error');
@@ -104,14 +122,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Valida mensagem
             if (mensagem.value.trim() === '') {
                 mensagemError.classList.add('show');
                 mensagem.classList.add('error');
                 isValid = false;
             }
 
-            // Se válido, simula envio
             if (isValid) {
                 alert('✅ Mensagem enviada com sucesso!\n\nObrigado, ' + nome.value.trim() + '!');
                 
